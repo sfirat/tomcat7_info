@@ -6,4 +6,4 @@ wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.
 #ln -s /opt/apache-ant-1.9.4 /opt/ant 
 #echo ANT_HOME=/opt/ant >> /etc/environment
 #ln -s /opt/ant/bin/ant /usr/bin/ant 
-cd /otp && tar zxf apache-tomcat-7.0.57.tar.gz && mv apache-tomcat-7.0.57 tomcat7 && rm apache-tomcat-7.0.57.tar.gz
+cd /opt && tar zxf apache-tomcat-7.0.57.tar.gz && mv apache-tomcat-7.0.57 tomcat7 && rm apache-tomcat-7.0.57.tar.gz
