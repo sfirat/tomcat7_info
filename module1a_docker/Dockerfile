@@ -24,7 +24,6 @@ RUN cd /opt && tar zxf jdk-7u71-linux-x64.tar.gz && \
     update-alternatives --set javac /usr/java/jdk1.7.0_71/bin/javac; \
     update-alternatives --set jar /usr/java/jdk1.7.0_71/bin/jar
 
-RUN echo "JAVA_HOME=/usr/java/jdk1.7.0_71" >> /etc/default/tomcat7
 
 RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz" \
     -O /opt/apache-tomcat-7.0.57.tar.gz
@@ -32,10 +31,8 @@ RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomca
 RUN cd /opt && tar zxf apache-tomcat-7.0.57.tar.gz && \
     mv apache-tomcat-7.0.57 tomcat7 && rm apache-tomcat-7.0.57.tar.gz
 
+ADD tomcat7_run.sh /usr/bin/tomcat7_run.sh
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-D[Standalone]","-server","-XX:+UseCompressedOops","-XX:+TieredCompilation","-XX:+DisableExplicitGC","-XX:+UseParallelGC","-XX:ThreadStackSize=256","-Xloggc:/opt/jboss/standalone/log/gc.log","-verbose:gc","-XX:+PrintGCDetails","-XX:+HeapDumpOnOutOfMemoryError","-XX:HeapDumpPath=/opt/jboss/standalone/log/","-Djava.awt.headless=true","-Dsun.rmi.dgc.client.gcInterval=3600000","-Dsun.rmi.dgc.server.gcInterval=3600000","-Dsun.lang.ClassLoader.allowArraySyntax=true","-XX:+CMSPermGenSweepingEnabled","-XX:+CMSClassUnloadingEnabled","-Dorg.jboss.boot.log.file=/opt/jboss/standalone/log/boot.log","-Dlogging.configuration=file:/opt/jboss/standalone/configuration/logging.properties"]
-
-CMD ["-Xms1024m","-Xmx1024m","-XX:PermSize=512m","-XX:MaxPermSize=512m","-Xss4m","-jar","/opt/jboss/jboss-modules.jar","-mp","/opt/jboss/modules","-jaxpmodule","javax.xml.jaxp-provider","org.jboss.as.standalone","-Djboss.home.dir=/opt/jboss"]
-
+CMD ["/usr/bin/tomcat7_run.sh"]
