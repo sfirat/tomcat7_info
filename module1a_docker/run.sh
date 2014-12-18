@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -d -t tomcat7
+docker run -d -v /var/tomcat7:/opt/tomcat7/logs tomcat7
