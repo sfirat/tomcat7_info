@@ -5,7 +5,7 @@ MAINTAINER Vadym Kovalenko vadym.kovalenko@gmail.com
 ENV LC_ALL C.UTF-8
 ENV JAVA_HOME /usr/java/jdk1.7.0_71
 #Install needed SW
-
+RUN yum -y install wget tar 
 ####Install JDK 1.7 Latest
 RUN  wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" \
      "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-linux-x64.tar.gz" -O "/opt/jdk-7u71-linux-x64.tar.gz"
@@ -31,8 +31,8 @@ RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomca
 RUN cd /opt && tar zxf apache-tomcat-7.0.57.tar.gz && \
     mv apache-tomcat-7.0.57 tomcat7 && rm apache-tomcat-7.0.57.tar.gz
 
-ADD tomcat7_run.sh /usr/bin/tomcat7_run.sh
+ADD tomcat7_run.sh /usr/bin/tomcat7.run.sh
 
 EXPOSE 8080
 
-CMD ["/usr/bin/tomcat7_run.sh"]
+CMD ["/usr/bin/tomcat7.run.sh"]

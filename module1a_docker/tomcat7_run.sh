@@ -1,4 +1,4 @@
 #!/bin/bash
 
-/opt/tomcat/bin/startup
-exec tail -f /var/log/tomcat7/catalina.out
+/opt/tomcat7/bin/catalina.sh run
+exec tail -f /opt/tomcat7/log/catalina.out
