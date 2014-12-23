@@ -1,0 +1,3 @@
+<Valve className="org.apache.catalina.valves.CrawlerSessionManagerValve" 
+crawlerUserAgents="[bB]ot.*|*Yahoo! Slurp.*|.*Feedfetcher-Google.*." sessionInactiveInterval="3600" />
+
