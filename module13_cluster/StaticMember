@@ -1,0 +1,10 @@
+<Interceptor className="org.apache.catalina.tribes.group.interceptors. TcpPingInterceptor" staticOnly="true"/>
+<Interceptor className="org.apache.catalina.tribes.group.interceptors. TcpFailureDetector"/>
+<Interceptor className="org.apache.catalina.tribes.group.interceptors. StaticMembershipInterceptor">
+
+<Member className="org.apache.catalina.tribes.membership.StaticMember" port="4000"
+host="127.0.0.1" uniqueId="{127,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0}"/>
+<Member className="org.apache.catalina.tribes.membership.StaticMember" port="4001" 
+host="10.1.0.101" uniqueId="{127,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0}"/>
+</Interceptor>
+
