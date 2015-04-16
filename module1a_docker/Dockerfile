@@ -25,11 +25,11 @@ RUN cd /opt && tar zxf jdk-7u71-linux-x64.tar.gz && \
     update-alternatives --set jar /usr/java/jdk1.7.0_71/bin/jar
 
 
-RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz" \
-    -O /opt/apache-tomcat-7.0.57.tar.gz
+RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz" \
+    -O /opt/apache-tomcat-7.0.61.tar.gz
 
-RUN cd /opt && tar zxf apache-tomcat-7.0.57.tar.gz && \
-    mv apache-tomcat-7.0.57 tomcat7 && rm apache-tomcat-7.0.57.tar.gz
+RUN cd /opt && tar zxf apache-tomcat-7.0.61.tar.gz && \
+    mv apache-tomcat-7.0.61 tomcat7 && rm apache-tomcat-7.0.61.tar.gz
 
 ADD tomcat7_run.sh /usr/bin/tomcat7.run.sh
 
