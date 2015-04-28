@@ -1,4 +1,4 @@
 #!/bin/bash
-wget -c -q "http://apache.ip-connect.vn.ua/tomcat/tomcat-7/v7.0.57/bin/extras/catalina-jmx-remote.jar" -O /opt/catalina-jmx-remote.jar
+wget -c -q "http://apache.ip-connect.vn.ua/tomcat/tomcat-7/v7.0.61/bin/extras/catalina-jmx-remote.jar" -O /opt/catalina-jmx-remote.jar
 mv /opt/catalina-jmx-remote.jar /opt/tomcat7/lib
 
