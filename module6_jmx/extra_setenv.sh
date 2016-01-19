@@ -1,5 +1,5 @@
 CATALINA_OPTS="$CATALINA_OPTS \
--XX:Xmx512m \
+-Xmx512m \
 -XX:-UseConcMarkSweepGC \
 -Dcom.sun.management.jmxremote \
 -Dcom.sun.management.jmxremote.authenticate=false \
