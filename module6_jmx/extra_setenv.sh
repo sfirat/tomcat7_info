@@ -12,6 +12,9 @@ CATALINA_OPTS="$CATALINA_OPTS \
 -XX:+PrintHeapAtGC \
 -XX:+PrintGCDetails \
 -XX:+PrintGCTimeStamps \
--XX:-HeapDumpOnOutOfMemoryError"
+-XX:-HeapDumpOnOutOfMemoryError \
+-Dcom.sun.management.jmxremote.rmi.port=10000 \
+-Djava.net.preferIPv4Stack=true \
+-Djava.rmi.server.hostname=ec2-52-29-238-104.eu-central-1.compute.amazonaws.com"
 
 
