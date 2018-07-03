@@ -11,10 +11,10 @@ RUN wget --no-cookies \
     --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     http://download.oracle.com/otn-pub/java/jdk/8u172-b11/a58eab1ec242421181065cdc37240b08/jdk-8u172-linux-x64.tar.gz \
     -O /opt/jdk-8-linux-x64.tar.gz && \
-
     cd /opt && tar zxf jdk-8-linux-x64.tar.gz && mkdir /usr/java/ && \
     mv /opt/jdk1.8.0_172 /usr/java && \
     rm /opt/jdk-8-linux-x64.tar.gz
+
 #Update alternatives section
 RUN update-alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_172/jre/bin/java 20000 && \
     update-alternatives --install /usr/bin/jar jar /usr/java/jdk1.8.0_172/bin/jar 20000 && \
@@ -23,7 +23,7 @@ RUN update-alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_172/jre/
     update-alternatives --set java /usr/java/jdk1.8.0_172/jre/bin/java && \
     update-alternatives --set javaws /usr/java/jdk1.8.0_172/jre/bin/javaws && \
     update-alternatives --set javac /usr/java/jdk1.8.0_172/bin/javac && \
-    update-alternatives --set jar /usr/java/jdk1.8.0_172/bin/jar && \
+    update-alternatives --set jar /usr/java/jdk1.8.0_172/bin/jar 
 
 RUN wget -c -q "http://apache.volia.net/tomcat/tomcat-7/v7.0.88/bin/apache-tomcat-7.0.88.tar.gz" \
     -O /opt/apache-tomcat-7.0.88.tar.gz
