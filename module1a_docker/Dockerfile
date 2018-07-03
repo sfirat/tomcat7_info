@@ -3,7 +3,7 @@ MAINTAINER Vadym Kovalenko vadym.kovalenko@gmail.com
 
 ###Declare Env section
 ENV LC_ALL C.UTF-8
-ENV JAVA_HOME /usr/java/jdk1.7.0_71
+ENV JAVA_HOME /usr/java/jdk1.8.0_172
 #Install needed SW
 RUN yum -y install wget tar 
 ####Install JDK 1.7 Latest
